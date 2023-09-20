@@ -16,7 +16,6 @@ const Login = () => {
 
   // Logged In Logic and Navigate to Browse Page
   const dispatch=useDispatch();
-  const navigate = useNavigate();
   //Sign In and Sign Up Logic 
   const handleSignIn = (event) => {
     event.preventDefault();
@@ -42,8 +41,6 @@ const Login = () => {
             const user = userCredential.user;
             const {email, displayName} = user
             dispatch(userLoggedIn({ email, displayName}))
-            navigate("/browse");
-            console.log(user);
           })
         })
         .catch((error) => {
@@ -59,7 +56,6 @@ const Login = () => {
           const {email, displayName}  = user;
           if(user) {
             dispatch(userLoggedIn({ email, displayName}))
-            navigate("/browse");
           }
         })
         .catch((error) => {
