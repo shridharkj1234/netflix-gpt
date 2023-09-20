@@ -7,10 +7,10 @@ const MainContainer = () => {
   //add movie trailer to state
   const movie = useSelector((state) => state.moviesList?.movieList);
   if (!movie.length) return
-  const firstMovie = movie[0];
+  const firstMovie = movie[5];
   const {original_title, overview, id} = firstMovie
   return (
-    <div className="relative">
+    <div className=" text-white">
           <ViewMovieOverview title={original_title} overview={overview}/>
           <ViewMovieTrailer id={id}/>
     </div>

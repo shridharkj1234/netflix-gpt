@@ -1,19 +1,22 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import Header from './Header'
 import useNowPlayingMovies from '../custom-hook/useNowPlayingMovies'
 import MainContainer from './MainContainer';
 import SecondContainer from './SecondContainer';
-import { useSelector } from 'react-redux';
+import usePopularMovies from '../custom-hook/usePopularMovies';
+import useTraindingMovies from '../custom-hook/useTraindingMovies';
 
 const Browse = () => {
   
   //fetching movies from tmdb API
   useNowPlayingMovies();
+  usePopularMovies();
+  useTraindingMovies();
   return (
-    <div className='text-white'>
+    <div className=''>
       <Header/>
       <MainContainer/>
-      {/* <SecondContainer/> */}
+      <SecondContainer/>
     </div>
   )
 }
